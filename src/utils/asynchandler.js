@@ -1,12 +1,8 @@
- const asynchandler=(reqHnadler)=>{
-    (req,res,next)=>{
+const asynchandler=(reqHnadler)=>{
+    return (req,res,next)=>{
         Promise.resolve(reqHnadler(req,res,next)).
         catch((err)=>next(err))
     }
-
-
-
-
 
  }
 
